@@ -1,0 +1,3 @@
+name: "Testing workflow"
+on_push:
+  - pwsh ./allresources.ps1
