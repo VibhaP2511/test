@@ -1,3 +1,11 @@
-name: "Testing workflow"
+name: "K8s Vendor PowerShell on Push with Azure Context"
+ 
 on_push:
-  - pwsh ./allresources.ps1
+  - bash -c "
+      az login --service-principal \
+        -u $ARM_CLIENT_ID \
+        -p $ARM_CLIENT_SECRET \
+        --tenant $ARM_TENANT_ID &&
+      az account set --subscription $ARM_SUBSCRIPTION_ID &&
+      pwsh ./allresources.ps1
+    "
