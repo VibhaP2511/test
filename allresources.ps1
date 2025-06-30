@@ -1,6 +1,6 @@
 # Install-Module -Name Az -AllowClobber -Force
 # Import-Module -Name Az  -Force
- 
+#hello
 $script:resourceData = @()
 $subscriptions = Get-AzSubscription
 foreach($subscription in $subscriptions)
